@@ -6,6 +6,8 @@ const Flex = styled.div`
   ${p => p.flex && css`flex: ${p.flex}`};
   ${p => p.width && css`width: ${p.width}`};
   ${p => p.height && css`height: ${p.height}`};
+  ${p => p.padding && css`padding: ${p.padding}`};
+  ${p => p.margin && css`margin: ${p.margin}`};
   ${p => p.bgColor && css`background-color: ${p.bgColor}`};
 `
 
