@@ -9,3 +9,7 @@ export default styled.input`
     border: 1px #fff;
   }
 `
+
+export const Form = styled.form`
+  width: 100%
+`

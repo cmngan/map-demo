@@ -1,12 +1,15 @@
-// import React from 'react'
 import styled, { css } from 'styled-components'
+import { responsiveCss } from './Theme'
+
 const Flex = styled.div`
   display: flex;
   box-sizing: border-box;
+  ${p => responsiveCss('flex-direction', p.direction)};
   ${p => p.flexWrap && css`flex-wrap: wrap`}
   ${p => p.flex && css`flex: ${p.flex}`};
-  ${p => p.width && css`width: ${p.width}`};
-  ${p => p.height && css`height: ${p.height}`};
+  ${p => responsiveCss('width', p.width)};
+  ${p => responsiveCss('min-width', p.width)};
+  ${p => responsiveCss('height', p.height)};
   ${p => p.padding && css`padding: ${p.padding}`};
   ${p => p.margin && css`margin: ${p.margin}`};
   ${p => p.bgColor && css`background-color: ${p.bgColor}`};
