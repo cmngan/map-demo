@@ -22,6 +22,7 @@ export default () => {
   const onReset = () => { 
     setOrigin('')
     setDest('')
+    setResponse({})
     setError(false)
   }
   const commonProps = {
