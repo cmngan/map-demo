@@ -9,7 +9,7 @@ const data = [
 ]
 
 // points: [[lat, lng], [lat, lng]]
-export default ({ points=data, zoom = 8, apiKey }) => {
+export default ({ points = data, zoom = 8, apiKey }) => {
   const mapLoaded = useRetry(() => window.google)
   let map = null
   if(mapLoaded) {
@@ -42,7 +42,7 @@ export default ({ points=data, zoom = 8, apiKey }) => {
     <>
       <Col id="map" width='100%' height='100%' />
       <Helmet>
-        <script async defer src={`https://maps.googleapis.com/maps/api/js?key=${apiKey}`} />
+        {/* <script async defer src={`https://maps.googleapis.com/maps/api/js?key=${apiKey}`} /> */}
       </Helmet>
     </>
   )
