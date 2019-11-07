@@ -2,6 +2,7 @@
 import styled, { css } from 'styled-components'
 const Flex = styled.div`
   display: flex;
+  box-sizing: border-box;
   ${p => p.flexWrap && css`flex-wrap: wrap`}
   ${p => p.flex && css`flex: ${p.flex}`};
   ${p => p.width && css`width: ${p.width}`};

@@ -16,3 +16,4 @@ This repo is integrated into Netlify. Therefore, it will auto release once pushe
 
 # Assumption
 (TODO)
+Retry infinite

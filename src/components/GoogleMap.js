@@ -1,25 +1,25 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, memo } from 'react'
 import { Helmet } from "react-helmet"
 import { Col } from './Layout'
 import { useRetry } from '../utils/hooks'
 const data = [
-  [-33.847927, 150.6517938],
-  [-37.9722342, 144.7729561],
-  [-31.9546904, 115.8350292]
+  // [-33.847927, 150.6517938],
+  // [-37.9722342, 144.7729561],
+  // [-31.9546904, 115.8350292]
 ]
 
 // points: [[lat, lng], [lat, lng]]
-export default ({ points = data, zoom = 8, apiKey }) => {
+export default memo(({ points = data, zoom = 12, apiKey }) => {
   const mapLoaded = useRetry(() => window.google)
   let map = null
-  if(mapLoaded) {
+  if(mapLoaded && !map) {
     map = new window.google.maps.Map(document.getElementById('map'), {
-      center: {lat: -34.397, lng: 150.644},
+      center: {lat: 22.3193, lng: 114.1694},
       zoom
     })
   }
   useEffect(() => {
-    if(map) {
+    if(map && points.length) {
       const googleMaps = window.google.maps
       const directionsService = new googleMaps.DirectionsService()
       const directionsDisplay = new googleMaps.DirectionsRenderer()
@@ -42,8 +42,8 @@ export default ({ points = data, zoom = 8, apiKey }) => {
     <>
       <Col id="map" width='100%' height='100%' />
       <Helmet>
-        {/* <script async defer src={`https://maps.googleapis.com/maps/api/js?key=${apiKey}`} /> */}
+        <script async defer src={`https://maps.googleapis.com/maps/api/js?key=${apiKey}`} />
       </Helmet>
     </>
   )
-}
+})
