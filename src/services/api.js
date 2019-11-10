@@ -1,6 +1,7 @@
 import { BACKEND_API_ENDPOINT } from '../config'
 
 const request = (api, method = 'GET', body) => {
+  if(BACKEND_API_ENDPOINT) throw Error('Please set server api endpoint in url, e.g. apiEndpoint=https://yourApiHost.org. Details in https://github.com/cmngan/map-demo/blob/master/README.md')
   const fetchApi = () => fetch(`${BACKEND_API_ENDPOINT}${api}`, {
     method,
     headers: {

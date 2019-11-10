@@ -37,7 +37,7 @@ export default () => {
           <Col height='10px' />
           <Text>Drop-off point</Text>
           <TextInput value={dest} onChange={e => setDest(e.target.value)} required {...commonProps} />
-          <Col height={['auto', '140px']} bottom padding='20px'>
+          <Col height={['auto', '140px']} bottom padding='20px 0'>
             { totalDistance && <Text>{`total distance: ${totalDistance}`}</Text> }
             { totalTime && <Text>{`total time: ${totalTime}`}</Text> }
             <Text error>{error}</Text>

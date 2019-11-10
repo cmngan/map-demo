@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Map Demo Site",
+  "name": "A website for demo a map",
   "icons": [
     {
       "src": "favicon.ico",

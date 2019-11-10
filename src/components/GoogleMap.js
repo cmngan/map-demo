@@ -12,6 +12,9 @@ const data = [
 export default memo(({ points = data, zoom = 12, apiKey }) => {
   const mapLoaded = useRetry(() => window.google)
   let map = null
+  useEffect(() => {
+    if(!apiKey) window.alert('Please add google api in url, e.g. mapApiKey=yourApiKey. Details in https://github.com/cmngan/map-demo/blob/master/README.md')
+  }, [apiKey])
   if(mapLoaded && !map) {
     map = new window.google.maps.Map(document.getElementById('map'), {
       center: {lat: 22.3193, lng: 114.1694},
