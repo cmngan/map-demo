@@ -41,4 +41,4 @@ This repo is integrated into Netlify. Therefore, it will auto release once pushe
 - Theme will be further developed. Should add themeProvider if this project is extended. 
 - API endpoint should be fixed in real life case. Google map api key should be provided with domain restriction. 
 - No retry limit. If api response is "in progress", we will retry to fetch it again. There is no number of retry limit.
-- No UI component testing is required. Manuel testing for ui is required.
+- No UI component testing is required. Manuel testing for ui is required. Otherwise, enzyme and cypress are preferred.
